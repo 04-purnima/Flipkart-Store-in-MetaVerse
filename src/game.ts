@@ -414,12 +414,12 @@ const options = { inventory }
 
 const script1 = new Script1()
 script1.init()
-script1.spawn(imageFromURL, {"image":"https://bafybeiegpazlbhaqw7mrl4eqnahxip5bqh4ppf6mm3d7zity23ujgvnjdi.ipfs.dweb.link/avtarSuitQR.png"}, createChannel(channelId, imageFromURL, channelBus))
-script1.spawn(imageFromURL2, {"image":"https://bafybeiegpazlbhaqw7mrl4eqnahxip5bqh4ppf6mm3d7zity23ujgvnjdi.ipfs.dweb.link/avtarSuitQR.png"}, createChannel(channelId, imageFromURL2, channelBus))
-script1.spawn(imageFromURL3, {"image":"https://bafybeiegpazlbhaqw7mrl4eqnahxip5bqh4ppf6mm3d7zity23ujgvnjdi.ipfs.dweb.link/avtarSuitQR.png"}, createChannel(channelId, imageFromURL3, channelBus))
-script1.spawn(imageFromURL4, {"image":"https://bafybeiegpazlbhaqw7mrl4eqnahxip5bqh4ppf6mm3d7zity23ujgvnjdi.ipfs.dweb.link/avtarSuitQR.png"}, createChannel(channelId, imageFromURL4, channelBus))
-script1.spawn(imageFromURL5, {"image":"https://bafybeibouwivw3m3dhtlb3iq5bhlihxxt7qxg3pn2qsgdsdejibfzp5tva.ipfs.dweb.link/Flipkart-Plus.jpg"}, createChannel(channelId, imageFromURL5, channelBus))
-script1.spawn(imageFromURL6, {"image":"https://bafybeiavauicvjx5gfd7jaijhovjgo6jk7gmszd7r73iog357ioqsdnplq.ipfs.dweb.link/1600858456_HulSrV_Flipkart.jpg"}, createChannel(channelId, imageFromURL6, channelBus))
+script1.spawn(imageFromURL, {"image":"https://bafybeiejmfrgnynvy4e42uas7uh2xb4i5nocj3pkfl3g6snk6xvh3k34am.ipfs.w3s.link/QRSAMSUNG.png"}, createChannel(channelId, imageFromURL, channelBus)) //qrcode
+script1.spawn(imageFromURL2, {"image":"https://bafybeifzewfmmbrz2vjz6gupxzag2umyhp42lhuciym56chmr7a6c4gtn4.ipfs.w3s.link/QRHARMAN.png"}, createChannel(channelId, imageFromURL2, channelBus)) //QRcode
+script1.spawn(imageFromURL3, {"image":"https://bafybeifzewfmmbrz2vjz6gupxzag2umyhp42lhuciym56chmr7a6c4gtn4.ipfs.w3s.link/QRHARMAN.png"}, createChannel(channelId, imageFromURL3, channelBus)) //QRcode
+script1.spawn(imageFromURL4, {"image":"https://bafybeih3dschnl66ifxxhrdswzkxpw6v2t5vckpzeep7ucnefhqguinr3i.ipfs.w3s.link/QRJBL.png"}, createChannel(channelId, imageFromURL4, channelBus)) //QRcode
+script1.spawn(imageFromURL5, {"image":"https://bafybeibzgidjgqf25hhbniihu5t5kaesbnxwroggal43cpltpdif7awllq.ipfs.w3s.link/harmanimage.png"}, createChannel(channelId, imageFromURL4, channelBus)) //harman
+script1.spawn(imageFromURL6, {"image":"https://bafybeianhj3ho53j3cq6jvkmykyyaaumabapakwi7k5cr5vj5gpzkrtgea.ipfs.w3s.link/MicrosoftTeams-image%20%285%29.png"}, createChannel(channelId, imageFromURL4, channelBus))
 
 //-----------------------------------------------------------------QR Codes ends---------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -468,9 +468,7 @@ screen.setParent(screenTransform)
 screenTransform.getComponent(Transform).scale.setAll(0.625) // You can change the scale of the screen here...
 
 // Video stream link from Vimeo
-const videoClip = new VideoClip(
-  'https://bafybeibsvhenzjmxt7mlbxv7pwnmjxggpw4yvz6ayfzqi4kuppg4ap5fj4.ipfs.dweb.link/Bas%20karo%20Thoda%20Intezaar.%20Don%27t%20Shop%20Now%21.mp4'
-)
+const videoClip = new VideoClip('https://bafybeige6r5otsgwt5la5y3urzz3v3qy3jczcl4s6seo35mrvyb6hskrg4.ipfs.w3s.link/videoplayback.mp4')
 const videoTexture = new VideoTexture(videoClip)
 videoTexture.play()
 videoTexture.loop = false
@@ -851,42 +849,42 @@ platform.addComponent(new Transform({
 }))
 engine.addEntity(platform)
 
-const coinShape = new GLTFShape('models/coin.glb') // Includes the spinning animation
+// const coinShape = new GLTFShape('models/coin.glb') // Includes the spinning animation
 
-// Contains the positions for each coin
-const coinPositions = [
-  new Vector3(-13.8, 1.5, 18.2),
-  new Vector3(-10.8, 1.5, 18.2),
-  new Vector3(-8, 1.5, 18.2),
-  new Vector3(-5.2, 1.5, 18.2),
-  new Vector3(-2.2, 1.5, 18.2),
-  new Vector3(-2.2, 2.18, 21),
-  new Vector3(-2.2, 2.8, 24),
-  new Vector3(-5.2, 2.8, 24),
-  new Vector3(-8, 2.8, 24),
-  new Vector3(-10.8, 2.8, 24),
-  new Vector3(-13.8, 2.8, 24),
-  new Vector3(-13.8, 3.4, 26.9),
-  new Vector3(-13.8, 3.9, 29.8),
-  new Vector3(-10.8, 3.9, 29.8),
-  new Vector3(-8, 3.9, 29.8),
-  new Vector3(-5.2, 3.9, 29.8),
-  new Vector3(-2.2, 3.9, 29.8),
-]
+// // Contains the positions for each coin
+// const coinPositions = [
+//   new Vector3(-13.8, 1.5, 18.2),
+//   new Vector3(-10.8, 1.5, 18.2),
+//   new Vector3(-8, 1.5, 18.2),
+//   new Vector3(-5.2, 1.5, 18.2),
+//   new Vector3(-2.2, 1.5, 18.2),
+//   new Vector3(-2.2, 2.18, 21),
+//   new Vector3(-2.2, 2.8, 24),
+//   new Vector3(-5.2, 2.8, 24),
+//   new Vector3(-8, 2.8, 24),
+//   new Vector3(-10.8, 2.8, 24),
+//   new Vector3(-13.8, 2.8, 24),
+//   new Vector3(-13.8, 3.4, 26.9),
+//   new Vector3(-13.8, 3.9, 29.8),
+//   new Vector3(-10.8, 3.9, 29.8),
+//   new Vector3(-8, 3.9, 29.8),
+//   new Vector3(-5.2, 3.9, 29.8),
+//   new Vector3(-2.2, 3.9, 29.8),
+// ]
 
-const triggerBoxShape = new utils.TriggerBoxShape(
-  new Vector3(1.5, 3, 1.5),
-  new Vector3(0, 1, 0)
-) // Trigger shape for coin
+// const triggerBoxShape = new utils.TriggerBoxShape(
+//   new Vector3(1.5, 3, 1.5),
+//   new Vector3(0, 1, 0)
+// ) // Trigger shape for coin
 
 // Setup the coins
-for (const coinPosition of coinPositions) {
-  createCoin(
-    coinShape,
-    new Transform({ position: coinPosition }),
-    triggerBoxShape
-  )
-}
+// for (const coinPosition of coinPositions) {
+//   createCoin(
+//     coinShape,
+//     new Transform({ position: coinPosition }),
+//     triggerBoxShape
+//   )
+// }
 
 //----------------------------------------------------FlipKartCoin CollectionGame ends-----------------------------------------------------
 
@@ -1018,8 +1016,8 @@ const script11 = new Script11()
 const script22 = new Script22()
 script11.init()
 script22.init()
-script11.spawn(imageBillboardBlack, {"image":"https://bafybeicvk22pvfqxtehwozr3bbk6kua2uzj5ngyb7mgisvllycimzi5fji.ipfs.dweb.link/flipkart_plus.jpg"}, createChannel(channelId1, imageBillboardBlack, channelBus1))
-script22.spawn(imageScreen, {"image":"https://bafybeiawevsjnojmluim6y3hsk5nwky5abxibd32xfuki7n5zhszmskvzu.ipfs.dweb.link/SuperCoins_Main_Banner_.jpg"}, createChannel(channelId1, imageScreen, channelBus1))
+script11.spawn(imageBillboardBlack, {"image":"https://bafybeigzjzuo4ecqkxhxdwx5qyomnxiclhlbw5bymskasdu2h55spoprby.ipfs.w3s.link/MicrosoftTeams-image%20%284%29.png"}, createChannel(channelId1, imageBillboardBlack, channelBus1))
+script22.spawn(imageScreen, {"image":"https://bafybeidhl6nxnubpylliyu5nwh3a5rgkgtnep6zr5onq3bgtfkgmjwzmyq.ipfs.w3s.link/MicrosoftTeams-image%20%283%29.png"}, createChannel(channelId1, imageScreen, channelBus1))
 
 //--------------------------------------------Billboard and banner ends-------------------------------------------------------------
 
@@ -1048,5 +1046,5 @@ const channelBus22 = new MessageBus()
 
 const script100 = new Script100()
 script100.init()
-script100.spawn(pm1, {"image":"https://bafybeigp2odug5gjmezwtayltfahnetwzqd7z4lb3gxp5gx2vlgo6wd2pa.ipfs.dweb.link/001.jpg"}, createChannel(channelId22, pm1, channelBus22))
-script100.spawn(pm2, {"image":"https://bafybeifvs3s77zchm2zqndzusj5vpeotfcyrtj4i7sa6wwxcfnumzerkmy.ipfs.dweb.link/004.jpg"}, createChannel(channelId22, pm2, channelBus22))
+script100.spawn(pm1, {"image":"https://bafybeicswltolglozppmbs6ed2ke3r7bcdzi6q72g5muur7tlecxhxm3hu.ipfs.w3s.link/001.jpg"}, createChannel(channelId22, pm1, channelBus22))
+script100.spawn(pm2, {"image":"https://bafybeigsf5unx476axi2s4vh6bfz2gcxs3ytfctkirnpvv3kn5rjfsl64u.ipfs.w3s.link/004.jpg"}, createChannel(channelId22, pm2, channelBus22))

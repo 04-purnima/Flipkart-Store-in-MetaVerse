@@ -58,7 +58,7 @@ export function createDispenser(
         //sceneMessageBus.emit('activatePoap', {})
         void makeTransaction()
       },
-      { hoverText: 'Get Attendance Token' }
+      { hoverText: 'Metamask Wallet' }
     )
   )
   engine.addEntity(button)
@@ -70,7 +70,7 @@ export function createDispenser(
   function activate(): void {
     const anim = entity.getComponent(Animator)
 
-    anim.getClip('Action_POAP').play()
+    //anim.getClip('Action_POAP').play()
 
     entity.addComponentOrReplace(
       new utils.Delay(4000, () => {

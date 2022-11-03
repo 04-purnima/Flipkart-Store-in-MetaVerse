@@ -9,15 +9,18 @@ export class InfoPanel {
   private nftTitle: UIText
   private nftDetails: UIText
   private nftDirectLink: UIText
+  private nftBuyButton: UIText
+  private visible: boolean
   private sound: Entity = new Entity()
 
   constructor(canvas: UICanvas) {
+    debugger
     // Container
     this.container = new UIContainerRect(canvas)
     this.container.width = "100%"
     this.container.height = "100%"
     this.container.positionY = 25
-    this.container.visible = false
+    this.container.visible = true
 
     // Drop Shadow
     this.dropShadow = new UIImage(
@@ -47,7 +50,7 @@ export class InfoPanel {
     this.nftType.positionX = -143
     this.nftType.positionY = 265
     this.nftType.fontSize = 16
-    this.nftType.fontWeight = "normal"
+    // this.nftType.fontWeight = "normal"
     this.nftType.color = new Color4(1, 0.1, 0.4)
     this.nftType.value = "Not Found"
     this.nftType.visible = false
@@ -59,7 +62,7 @@ export class InfoPanel {
     this.nftTitle.positionX = -143
     this.nftTitle.positionY = 233
     this.nftTitle.fontSize = 25
-    this.nftTitle.fontWeight = "bold"
+    // this.nftTitle.fontWeight = "bold"
     this.nftTitle.color = Color4.Black()
     this.nftTitle.value = "Not Found"
     this.nftTitle.visible = false
@@ -74,6 +77,36 @@ export class InfoPanel {
     this.nftImage.width = 384
     this.nftImage.height = 384
     this.nftImage.visible = false
+
+    //NFT Button
+    this.nftBuyButton = new UIText(this.container)
+    this.nftBuyButton.name = "HarmanButton1234"
+    this.nftBuyButton.hAlign = "bottom"
+    this.nftBuyButton.vAlign = "bottom"
+    this.nftBuyButton.positionX = -50
+    this.nftBuyButton.positionY = 5
+    this.nftBuyButton.fontSize = 20
+    //this.nftBuyButton.fontWeight = "normal"
+    this.nftBuyButton.color = new Color4(1, 0.1, 0.4)
+    this.nftBuyButton.visible = true
+    
+
+       // Buy button to the bottom left
+       const BuyButton = new UIImage(
+        this.container,
+        new Texture("images/buybutton.png")
+      )
+      BuyButton.sourceWidth = 50
+      BuyButton.sourceHeight = 50
+      BuyButton.width = 37.5
+      BuyButton.height = 37.5
+      BuyButton.positionX = 150
+      BuyButton.positionY = 250
+      BuyButton.isPointerBlocker = true
+      BuyButton.onClick = new OnClick((): void => {
+        this.closeInfoPanel()
+      })
+    
 
     // Close button to the top right
     const closeButton = new UIImage(
@@ -98,7 +131,7 @@ export class InfoPanel {
     this.nftDetails.vAlign = "center"
     this.nftDetails.positionY = -208
     this.nftDetails.fontSize = 18
-    this.nftDetails.fontWeight = "bold"
+    // this.nftDetails.fontWeight = "bold"
     this.nftDetails.color = Color4.Black()
     this.nftDetails.value = "Not Found"
     this.nftDetails.visible = false
@@ -110,7 +143,7 @@ export class InfoPanel {
     this.nftDirectLink.vAlign = "center"
     this.nftDirectLink.positionY = -233
     this.nftDirectLink.fontSize = 10
-    this.nftDirectLink.fontWeight = "normal"
+    // this.nftDirectLink.fontWeight = "normal"
     this.nftDirectLink.color = Color4.Black()
     this.nftDirectLink.value = "Not Found"
     this.nftDirectLink.visible = false
@@ -130,6 +163,7 @@ export class InfoPanel {
   }
 
   public openInfoPanel(id: number): void {
+    debugger
     for (let i = 0; i < data.length; i++) {
       if (id == data[i].id) {
         log(data[i].images)
@@ -140,8 +174,13 @@ export class InfoPanel {
         this.nftDetails.fontSize = data[i].details.fontSize
         this.nftDirectLink.value = data[i].directLink.link
         this.nftDirectLink.fontSize = data[i].directLink.fontSize
+        this.nftBuyButton.value = "BUYNFT"
+        this.nftBuyButton.visible = true
+        
+        //this.visible=true
       }
     }
+    debugger
 
     this.container.visible = true
     this.nftType.visible = true
@@ -149,6 +188,7 @@ export class InfoPanel {
     this.nftImage.visible = true
     this.nftDetails.visible = true
     this.nftDirectLink.visible = true
+    this.nftBuyButton.visible = true
   }
 
   private closeInfoPanel(): void {
@@ -158,6 +198,20 @@ export class InfoPanel {
     this.nftImage.visible = false
     this.nftDetails.visible = false
     this.nftDirectLink.visible = false
+    this.nftBuyButton.visible = false
+  
+    this.sound.getComponent(AudioSource).playOnce()
+  }
+
+  private buttonInfoPanel(): void {
+    this.container.visible = true
+    this.nftType.visible = true
+    this.nftTitle.visible = true
+    this.nftImage.visible = true
+    this.nftDetails.visible = true
+    this.nftDirectLink.visible = true
+    this.nftBuyButton.visible = true
+  
     this.sound.getComponent(AudioSource).playOnce()
   }
 }

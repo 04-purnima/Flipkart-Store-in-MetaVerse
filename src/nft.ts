@@ -34,12 +34,13 @@ export class NFT extends Entity {
       new OnPointerDown(
         (): void => {
           this.getComponent(AudioSource).playOnce()
+          debugger
           infoPanel.openInfoPanel(this.id)
         },
         {
-          button: ActionButton.POINTER,
+          //button: ActionButton.POINTER,
           showFeedback: true,
-          hoverText: "More Info",
+          hoverText: "NFT ART",
           distance: 8,
         }
       )

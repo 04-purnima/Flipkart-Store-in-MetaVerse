@@ -4,7 +4,7 @@ export const data = [
     images: "images/makersPlaceAliceInWater.png",
     type: "MakersPlace",
     title: "Alice in Water",
-    details: { info: "Artist: Katy Arrington", fontSize: 18 },
+    details: { info: "Artist: Katy Arrington \n Cost: $2,222.01", fontSize: 18 },
     directLink: {
       link:
         "https://makersplace.com/katyarrington/alice-in-water-4-of-10-23747",
@@ -17,11 +17,12 @@ export const data = [
     images: "images/cryptoKittiesPuddingDaintytot.png",
     type: "CryptoKitties",
     title: "Pudding Daintytot",
-    details: { info: "#1320779 / Gen 19 / Slow Cooldown  (16h)", fontSize: 15 },
+    details: { info: "#1320779 / Gen 19 / Slow Cooldown (16h)  \n Cost:110,000,000,000,000,000,000 ETH", fontSize: 15 },
     directLink: {
       link: "https://www.cryptokitties.co/kitty/1320779",
       fontSize: 11,
     },
+    
     address: "0x06012c8cf97bead5deae237070f9587f8e7a266d/1320779",
   },
   {
@@ -29,7 +30,8 @@ export const data = [
     images: "images/knownOriginPussyBird.png",
     type: "Known Origin",
     title: "Pussy Bird",
-    details: { info: "Artist: Kozachok", fontSize: 18 },
+    details: { info: "Artist: Kozachok \n Cost: $200", fontSize: 18 },
+    test: "Buy NFT" ,
     directLink: {
       link: "https://knownorigin.io/token/165777",
       fontSize: 12,
@@ -50,6 +52,7 @@ export const data = [
       fontSize: 11,
     },
     address: "0xf5b0a3efb8e8e4c201e2a935f110eaaf3ffecb8d/265",
+    
   },
   {
     id: 4,
